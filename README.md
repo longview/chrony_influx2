@@ -6,3 +6,5 @@ Requires influxdb-client
 ```
 pip install influxdb-client
 ```
+
+Tested on Raspbian & RHEL 9.0
