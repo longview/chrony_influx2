@@ -1,0 +1,13 @@
+[Unit]
+Description=chrony to Influx
+After=syslog.target
+
+[Service]
+WorkingDirectory=/opt/chrony_influx2/
+ExecStart=/usr/bin/python3 /opt/chrony_influx2/chrony_influx2.py
+KillMode=process
+Restart=on-failure
+User=<user>
+
+[Install]
+WantedBy=multi-user.target
