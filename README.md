@@ -14,7 +14,7 @@ IP addresses are looked up using the system DNS, at present only tested with IPv
 Tested on Raspbian & RHEL 9.0
 
 ## Making chrony auto-restart
-chrony is pretty reliable, but I have observed failures.
+chrony is pretty reliable, but I have observed failures. At least one failure was caused by gpsd becoming unstable for some reason.
 
 You can use the edit command to add an override.conf to the service:
 ```
