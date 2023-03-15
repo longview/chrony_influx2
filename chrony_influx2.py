@@ -71,9 +71,13 @@ try:
 
                 # look up the hostname if it looks like an IP
                 if "." in datapoints[0]:
-                    source_hostname = socket.gethostbyaddr(datapoints[0])
-                    sourcestat.name_ip = source_hostname[0]
-                    sourcestat.sourcetype = "remote"
+                    try:
+                        source_hostname = socket.gethostbyaddr(datapoints[0])
+                        sourcestat.name_ip = source_hostname[0]
+                        sourcestat.sourcetype = "remote"
+                    except socket.herror:
+                        sourcestat.name_ip = datapoints[0]
+                        sourcestat.sourcetype = "remote"
                 else:
                     sourcestat.name_ip = datapoints[0]
                     sourcestat.sourcetype = "local"
