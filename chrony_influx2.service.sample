@@ -4,6 +4,7 @@ After=syslog.target
 
 [Service]
 WorkingDirectory=/opt/chrony_influx2/
+ExecStartPre=/bin/sleep 60
 ExecStart=/usr/bin/python3 /opt/chrony_influx2/chrony_influx2.py
 KillMode=process
 Restart=on-failure
