@@ -15,7 +15,7 @@ IP addresses are looked up using the system DNS, at present only tested with IPv
 
 Tested on Raspbian, RHEL 9.0/9.1, and Centos Stream 9.
 
-The suggested service control script has a 60 second delay on startup; this is done since chrony's output immediately on startup tends to have large spikes due to e.g. RTC offsets. The delay allows this to settle before logging starts.
+The suggested service control script has a 60 second delay on startup; this is done since chrony's output immediately on startup tends to have large spikes due to e.g. RTC offsets. The delay allows this to settle before logging starts. It's also useful in cases where influxdb is running on the same computer, since influxdb will normally take longer to start up than this script.
 
 ## Making chrony auto-restart
 chrony is pretty reliable, but I have observed failures. At least one failure was caused by gpsd becoming unstable for some reason.
